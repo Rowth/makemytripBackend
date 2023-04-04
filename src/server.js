@@ -8,7 +8,7 @@ require("dotenv").config();
 const port = 7600;
 app.use(express.json());
 
-app.use(cors({origin:`http://localhost:${port}`,credentials:true}))
+app.use(cors({ origin: `http://localhost:3000`, credentials: true }))
 // app.use(cors());
 let userController = require("./controllers/user.controller");
 let checkoutController = require("./controllers/checkout.controller");

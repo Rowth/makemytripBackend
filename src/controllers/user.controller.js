@@ -6,14 +6,17 @@ const User = require("../models/user.model");
 
 //user post(create) request
 router.post("", async (req, res) => {
-  let user = await User.create(req.body);
-  console.log(user);
-  return res.send(user);
+  try {
+    let user = await User.create(req.body);
+    return res.send(user);
+  } catch (error) {
+    res.send(error)
+  }
 });
 // get(read) request 
-router.get("", async (req, res) => {
+router.get("/name", async (req, res) => {
   let user = await User.find().lean().exec();
-  return res.status(200).send({ user });
+  return res.status(200).send({ name: "sdhjkhfshdfsfhbsdfh" });
 });
 
 router.get("/users/:id", async (req, res) => {
