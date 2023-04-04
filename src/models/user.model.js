@@ -4,9 +4,6 @@ const userSchema = new mongoose.Schema({
 
   id: { type: String, required: true },
 
-
-
-
   name: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
@@ -16,18 +13,18 @@ const userSchema = new mongoose.Schema({
     max: 9999999999,
     unique: true,
   },
-  checkout: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "checkouts",
-    },
-  ],
-  order: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "orders",
-    },
-  ],
+  // checkout: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "checkouts",
+  //   },
+  // ],
+  // order: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "orders",
+  //   },
+  // ],
 });
 
 const User = mongoose.model("users", userSchema);
